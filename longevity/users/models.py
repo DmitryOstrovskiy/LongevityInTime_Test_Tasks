@@ -3,7 +3,7 @@ from django.core.validators import MaxLengthValidator, MinLengthValidator
 from django.db import models
 
 
-from .validators import validate_password, validate_username
+from api.validators import validate_password, validate_username
 
 MAX_LENGTH_EMAIL = 254
 MAX_LENGTH_USERNAME = 50
@@ -12,7 +12,7 @@ MAX_LENGTH_PASSWORD = 15
 
 
 class User(AbstractUser):
-    """ Custom UserModel."""
+    """ Custom UserModel """
     username = models.CharField(
         verbose_name='Username',
         validators=[validate_username],

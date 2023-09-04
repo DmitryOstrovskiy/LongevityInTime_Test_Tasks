@@ -26,21 +26,22 @@ SECRET_KEY = '85h(+uwsgn_oru)-z3u23lc()bge3pm3-l%goc6$wtk!df-g^j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'api.apps.ApiConfig',
-    'users.apps.UsersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest-framework',
+    'api.apps.ApiConfig',
+    'users.apps.UsersConfig',
+    'drf_yasg',
+    'rest_framework',
     'djoser',
 ]
 
@@ -140,3 +141,13 @@ SIMPLE_JWT = {
    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
    'AUTH_HEADER_TYPES': ('Bearer',),
 }
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.ScryptPasswordHasher',
+]

@@ -1,17 +1,17 @@
-### **Тестовое задание для Python разработчика** _Longevity In Time_
+### **Test task for Python develope** _Longevity In Time_
 
-### Описание
+### Description
 
-**Проект включает в себя создание RESTful API модели пользователя с помощью Django Rest Framework (DRF), интеграцию аутентификации и авторизации, используется Auth0 для аутентификации.**
+**The project includes the creation of a RESTful API user model using Django Rest Framework (DRF), integration of authentication and authorization, using Auth0 for authentication.**
  
-### Функционал
+### Functionality
 
-- **Модель пользователя.** Регистрации пользователя, вход в систему, получение профиля пользователя, обновление профиля пользователя и удаление учетной записи.
-- **Безопасное хэширование и хранение паролей** Безопасное хэширование паролей и их хранение с использованием алгоритма хэширования Django - Argon.
-- **Валидация и обработка ошибок** Реализованы соответствующие методы валидации и обработки ошибок для эндпоинтов.
-- **Кастомная модель пользователя и аутентификация** Кастомная модель пользователя, которая включает электронную почту в качестве уникального идентификатора.
+- **The user's model** User registration, login, user profile acquisition, user profile update and account deletion.
+- **Secure password hashing and storage** Secure password hashing and storage using the Django - Argon hashing algorithm.
+- **Validation and Error handling** Appropriate validation and error handling methods for endpoints are implemented.
+- **Custom User model and Authentication** Custom user model that includes email as a unique identifier.
 
-### Технологии
+### Technologies
 
 - Python 3.7
 - Django 3.2.20
@@ -21,40 +21,40 @@
 - drf-yasg 1.21.7
 - argon2-cffi 23.1.0
 
-### Проект запускается по адресу:
+###  The project is launched at:
 
 - http://127.0.0.1:8000/
-- http://127.0.0.1:8000/redoc/ - документация к проекту
-- http://127.0.0.1:8000/admin/ - страница администратора
+- http://127.0.0.1:8000/redoc/ - project documentation
+- http://127.0.0.1:8000/admin/ - admin page
 
-### Запуск проекта
+### Project launch
 
-Клонируйте репозиторий и перейдите в него в командной строке:
+Clone the repository and navigate to it in the command line:
 ```sh
 git clone https://github.com/DmitryOstrovskiy/LongevityInTime_Test_Tasks && cd LongevityInTime_Test_Tasks
 ```
-Установите виртуальное окружение, активируейте его и установите зависимости:
+Install the virtual environment, activate it and install dependencies:
 ```sh
 python -m venv venv && Windows: ```source venv\scripts\activate```; Linux/Mac: ```sorce venv/bin/activate``` && pip install -r requirements.txt
 ```
-Выполните миграции:
+Perform migrations:
 ```sh
 python manage.py migrate
 ```
-Создайте суперпользователя:
+Create a superuser:
 ```sh
 python manage.py createsuperuser
 ```
-Запустите сервер:
+Start the server:
 ```sh
 python manage.py runserver
 ```
 
-### Примеры запросов
+### Query examples
 
-### _Регистрация пользователя_
+### _Registration of the user_
 **POST**: http://127.0.0.1:8000/api/auth/users/
-Пример запроса:
+Request example:
 ```json
 {
 "first_name": "Ivan",
@@ -64,7 +64,7 @@ python manage.py runserver
 "email": "ivan@yandex.ru"
 } 
 ```
-Пример ответа:
+Response example:
 ```json
 {
     "first_name": "Ivan",
@@ -75,16 +75,16 @@ python manage.py runserver
 }
 ```
 
-### _Получение JWT-токена_
+### _Getting a JWT token_
 **POST**: http://127.0.0.1:8000/api/auth/jwt/create/   
-Пример запроса:
+Request example:
 ```json
 {
 "email": "ivan@yandex.ru",
 "password": "UserIvan1"
 }  
 ```
-Пример ответа:
+Response example:
 ```json
 {
     "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5MzkyMjE5NCwianRpIjoiOTg0NzFiYTg1MDgyNDIzN2I1NDZjMTYyZTczNzM2MzUiLCJ1c2VyX2lkIjoyfQ.AA7j0s3gdmfPLamYy9FxomsN00zXfs73-8RGkWFWs2E",
@@ -92,9 +92,9 @@ python manage.py runserver
 }
 ```
 
-### _Получение профиля пользователя_
-**GET**: http://127.0.0.1:8000/api/auth/users/2/ - Во вкладке Authorization необходимо передать access-токен
-Пример ответа:
+### _Getting a user profile_
+**GET**: http://127.0.0.1:8000/api/auth/users/2/ - In the Authorization tab, you need to pass an access token
+Response example:
 ```json
 {
     "first_name": "Ivan",
@@ -106,9 +106,9 @@ python manage.py runserver
 }
 ```
 
-### _Обновление профиля пользователя_
-**PUT**: http://127.0.0.1:8000/api/auth/users/2/ - Во вкладке Authorization необходимо передать access-токен
-Пример запроса:
+### _Updating the user profile_
+**PUT**: http://127.0.0.1:8000/api/auth/users/2/ - In the Authorization tab, you need to pass an access token
+Request example:
 ```json
 {
 "first_name": "Ivan",
@@ -118,7 +118,7 @@ python manage.py runserver
 "email": "ivan@yandex.ru"
 } 
 ```
-Пример ответа:
+Response example:
 ```json
 {
     "first_name": "Ivan",
@@ -130,14 +130,14 @@ python manage.py runserver
 }
 ```
 
-### _Удаление профиля пользователя_
-**DELETE**: http://127.0.0.1:8000/api/auth/users/2/ - Во вкладке Authorization необходимо передать access-токен
-Пример запроса:
+### _Deleting a user profile_
+**DELETE**: http://127.0.0.1:8000/api/auth/users/2/ - In the Authorization tab, you need to pass an access token
+Request example:
 ```json
 {
 "current_password": "UserIvan1234"
 }
 ```
 
-### Автор - Дмитрий Островский
+### Author - Dmitry Ostrovsky
 

@@ -6,10 +6,10 @@
  
 ### Functionality
 
-- **The user's model** User registration, login, user profile acquisition, user profile update and account deletion.
-- **Secure password hashing and storage** Secure password hashing and storage using the Django - Argon hashing algorithm.
-- **Validation and Error handling** Appropriate validation and error handling methods for endpoints are implemented.
-- **Custom User model and Authentication** Custom user model that includes email as a unique identifier.
+- **The user's model.** User registration, login, user profile acquisition, user profile update and account deletion.
+- **Secure password hashing and storage.** Secure password hashing and storage using the Django - Argon hashing algorithm.
+- **Validation and Error handling.** Appropriate validation and error handling methods for endpoints are implemented.
+- **Custom User model and Authentication.** Custom user model that includes email as a unique identifier.
 
 ### Technologies
 
@@ -54,6 +54,7 @@ python manage.py runserver
 
 ### _Registration of the user_
 **POST**: http://127.0.0.1:8000/api/auth/users/
+
 Request example:
 ```json
 {
